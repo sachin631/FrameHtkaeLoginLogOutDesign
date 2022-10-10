@@ -13,6 +13,9 @@ module.exports = {
         primary: {
           400: "#F3733D"
         }
+      },
+      boxShadow: {
+        '3xl': '0px 0px 8px rgba(127, 127, 124, 0.2)',
       }
     },
   },
