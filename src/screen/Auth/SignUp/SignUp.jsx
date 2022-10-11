@@ -31,45 +31,7 @@ export default function SingUp() {
     console.warn("result",result);
     
    }
-//   const navigate = useNavigate();
-// const [user,setUser]= useState({
-//   sName:"",sEmail:"",sPassword:""})
 
-//   let name,value;
-// const handlerInputs =(e)=>{
-//    console.log(e);
-//    name = e.target.name;
-//    value = e.target.value;
-
-//    setUser({...user,[name]:value});
-// }
-
-// const PostData = async (e)=>{
-
-//     e.preventDefault();
-//     const{sName, sEmail, sPassword }= user;
-
-//     const res = await fetch("http://ec2-52-66-165-70.ap-south-1.compute.amazonaws.com:3000/user/login",{
-//       method:"POST",
-//       headers: { 
-//         'Content-Type': 'application/json'
-//       },
-//      body:JSON.stringify({
-//       sName, sEmail, sPassword 
-//      })
-//     })
-//   const data = await res.json();
-
-//   if(data.status === 422 || !data){
-//     window.alert("Invalid Registration");
-    
-//   }else{
-//     let history = useHistory();
-//     window.alert("Successfull Registration");
-
-//     navigate("./SignUp/SignUp.jsx");
-//   }
-// }
   return (
     <div className="min-h-screen min-w-screen flex justify-center items-center bg-white">
       <div className='sign-up-form-input-shadow container mx-auto bg-white grid grid-cols-10 rounded-xl overflow-hidden'>

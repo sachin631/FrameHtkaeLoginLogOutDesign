@@ -17,13 +17,13 @@ export default function MainRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="auth" element={<Auth />}>
-        <Route path="Login" element={<Login />} />
+        <Route path="auth" element={<Auth />}></Route>
+        <Route path="/Login" element={<Login />} />
 
-        </Route>
+        
        
-        <Route path="*" element={<NotFound />} />
-        <Route path="SignUp" element={<SignUp />} />
+        <Route path="/*" element={<NotFound />} />
+        <Route path="/auth/sign-up" element={<SignUp />} />
         <Route path="LoginWithOtp" element={<LoginWithOtp />} />
         <Route path="RequestOtp" element={<RequestOtp />} />
         <Route path="PasswordRest" element={<PasswordRest />} />
