@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import './Login.css'
 
 export default function Login() {
+  const [sEmail,setemail]=useState("");
+  const [sPassword,setpassword]=useState("");
+  
+  
+function userdata(){
+  fetch("http://52.66.165.70:3000/user/login",{
+    method:"POST",
+    headers:{
+      "Accept":"application/json",
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({sEmail,sPassword})
+  }).then((result)=>{
+    result.json().then((resp)=>{
+      console.log(resp)
+    })
+  })
+}
+
   return (
     <div className="min-h-screen min-w-screen flex justify-center items-center bg-white">
     <div className="lg:hidden">
@@ -33,19 +52,27 @@ export default function Login() {
                 <label htmlFor="name" className='text-[18px] leading-[21.5px] font-medium text-[#7F7F7C] ml-[6px]'>Email ID</label>
                 <div className="p-[16px]  mt-[12px] flex items-center border border-[#F2F2EC] rounded-full sign-up-form-input-shadow w-full">
                   <span className='icon'><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.66389 16C2.14215 16 1.69567 15.8043 1.32445 15.413C0.952594 15.021 0.766666 14.55 0.766666 14V2C0.766666 1.45 0.952594 0.979333 1.32445 0.588C1.69567 0.196 2.14215 0 2.66389 0H17.8417C18.3634 0 18.8102 0.196 19.1821 0.588C19.5533 0.979333 19.7389 1.45 19.7389 2V14C19.7389 14.55 19.5533 15.021 19.1821 15.413C18.8102 15.8043 18.3634 16 17.8417 16H2.66389ZM10.2528 9L2.66389 4V14H17.8417V4L10.2528 9ZM10.2528 7L17.8417 2H2.66389L10.2528 7ZM2.66389 4V2V14V4Z" fill="#CCCCC6"/></svg></span>
-                  <input type="email" placeholder='Enter your email id' className=' text-[#4C4C4A] w-full text-[16px] outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]' required/>
+                  {/* ---------------------emial--------------------- */}
+                  <input onChange={(event)=>{setemail(event.target.value)}} type="email" placeholder='Enter your email id' className=' text-[#4C4C4A] w-full text-[16px] outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]' required/>
+                
                 </div>
               </div>
               <div>
                 <label htmlFor="name" className='text-[18px] leading-[21.5px] font-medium text-[#7F7F7C] ml-[6px]'>Password</label>
                 <div className="p-[16px]  mt-[12px] flex items-center border border-[#F2F2EC] rounded-full sign-up-form-input-shadow w-full">
                   <span className='icon'><svg width="16" height="21" viewBox="0 0 16 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.56111 21C2.03938 21 1.5929 20.8043 1.22167 20.413C0.849817 20.021 0.663889 19.55 0.663889 19V9C0.663889 8.45 0.849817 7.979 1.22167 7.587C1.5929 7.19567 2.03938 7 2.56111 7H3.50972V5C3.50972 3.61667 3.97233 2.43733 4.89754 1.462C5.82212 0.487333 6.94053 0 8.25278 0C9.56502 0 10.6838 0.487333 11.609 1.462C12.5335 2.43733 12.9958 3.61667 12.9958 5V7H13.9444C14.4662 7 14.913 7.19567 15.2848 7.587C15.6561 7.979 15.8417 8.45 15.8417 9V19C15.8417 19.55 15.6561 20.021 15.2848 20.413C14.913 20.8043 14.4662 21 13.9444 21H2.56111ZM2.56111 19H13.9444V9H2.56111V19ZM8.25278 16C8.77451 16 9.22131 15.8043 9.59317 15.413C9.96439 15.021 10.15 14.55 10.15 14C10.15 13.45 9.96439 12.979 9.59317 12.587C9.22131 12.1957 8.77451 12 8.25278 12C7.73104 12 7.28456 12.1957 6.91334 12.587C6.54148 12.979 6.35556 13.45 6.35556 14C6.35556 14.55 6.54148 15.021 6.91334 15.413C7.28456 15.8043 7.73104 16 8.25278 16ZM5.40694 7H11.0986V5C11.0986 4.16667 10.8219 3.45833 10.2686 2.875C9.71522 2.29167 9.04329 2 8.25278 2C7.46227 2 6.79034 2.29167 6.23698 2.875C5.68362 3.45833 5.40694 4.16667 5.40694 5V7Z" fill="#CCCCC6"/></svg></span>
-                  <input type="password" placeholder='Password' className='text-[16px]  w-full text-[#4C4C4A]  outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]'  required/>
+                 
+                 
+                  {/* ----------------------password-------------------------------- */}
+                  <input onChange={(event)=>{setpassword(event.target.value)}} type="password" placeholder='Password' className='text-[16px]  w-full text-[#4C4C4A]  outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]'  required/>
+                
                 </div>
               </div>
 
               {/* Terms & Conditions */}
               <div class="form-check form-switch">
+             
+             {/* ---------------------------ChekBox------------------------------------ */}
               <input class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top checked:bg-primary-400 bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckDefault" required/>
                 <label class="form-check-label inline-block text-[#B2B2AE]  text-[16px] leading-[19.8px] ml-[10px]" form="flexSwitchCheckDefault"><p>Remember me </p></label>
                 <label class="form-check-label inline-block text-[#B2B2AE]  text-[16px] leading-[19.8px] ml-[160px]" form="flexSwitchCheckDefault"><p> <NavLink to="/PasswordRest">Forget Password</NavLink> </p></label>
@@ -53,7 +80,7 @@ export default function Login() {
               
               {/* Create Account */}
               <div className="mt-[42px]">
-                <button className='bg-primary-400 shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] '>Login</button>
+                <button onClick={(event)=>{userdata(event)}} className='bg-primary-400 shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] '>Login</button>
               </div>
 
                {/*Login with otp*/}
