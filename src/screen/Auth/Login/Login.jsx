@@ -5,6 +5,37 @@ import './Login.css'
 export default function Login() {
   const [sEmail,setemail]=useState("");
   const [sPassword,setpassword]=useState("");
+  const [emailErr,setEmailErr]=useState(false);
+  const [passwordErr,setPasswordErr]=useState(false);
+
+  function emailhandler(event){
+
+    const item=event.target.value;
+    // const regEx= /^[a-zA-Z._]{3,}@[A_Za-z]{3,}[.]{1}[A-Za-z]{2,6}$/;
+    const regEx=/^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/
+    setemail(item);
+
+    if(regEx.test(sEmail)===false){
+      setEmailErr(true)
+    }
+    // if(item.length<5){
+    //   setEmailErr(true);
+    // }
+    else{
+      setEmailErr(false)
+    }
+
+  }
+  function passwordhandler(event){
+   const item=event.target.value;
+    setpassword(item);
+    if(item.length<9){
+      setPasswordErr(true)
+    }
+    else{
+      setPasswordErr(false)
+    }
+  }
   
   
 function userdata(){
@@ -23,12 +54,14 @@ function userdata(){
 }
 
   return (
-    <div className="min-h-screen min-w-screen flex justify-center items-center bg-white">
+    <div className="min-h-screen min-w-screen flex justify-between items-center bg-white w-[100v]">
     <div className="lg:hidden">
       <img src='/assets/Frame.svg' className='mt-[1]'/>
     </div>
-      <div className='sign-up-form-input-shadow container mx-auto bg-white grid grid-cols-10 rounded-xl overflow-hidden'>
-        <div className="flex flex-col justify-between col-span-4 bg-[#FFF6F2] overflow-hidden">
+      <div className='sign-up-form-input-shaow contaner mx-auo bg-white grid grid-cols-12 rouned-xl overflow-hidden'>
+        {/* grid-cols-12  container*/}
+        <div className="flex flex-col justify-between col-span-5 bg-[#FFF6F2] overflow-hidden">
+          {/* span-4 */}
           <div className="">
             <img src='/assets/framehatke.svg' className='mt-[42px] ml-[52px]'/>
           </div>
@@ -36,7 +69,8 @@ function userdata(){
             <img src='/assets/Frame 9.svg' className='px-[62px] py-[115px] bottom-0'/>
           </div>
         </div>
-        <div className="col-span-6 flex justify-center  items-center">
+        <div className="col-span-7 flex justify-center  items-center">
+          {/* grid-cols-6 */}
           <div className="p-8 w-full max-w-[523px]">
             <h1 className='font-bold text-[48px] leading-[58px] text-[#4C4C4A]'>Log <span className='text-primary-400'>In</span></h1>
             <p className='text-[18px] leading-[21.78px]'>Don’t have an account ? <NavLink to="/SignUp"><span className='text-primary-400'>Sign Up</span></NavLink></p>
@@ -52,10 +86,12 @@ function userdata(){
                 <label htmlFor="name" className='text-[18px] leading-[21.5px] font-medium text-[#7F7F7C] ml-[6px]'>Email ID</label>
                 <div className="p-[16px]  mt-[12px] flex items-center border border-[#F2F2EC] rounded-full sign-up-form-input-shadow w-full">
                   <span className='icon'><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.66389 16C2.14215 16 1.69567 15.8043 1.32445 15.413C0.952594 15.021 0.766666 14.55 0.766666 14V2C0.766666 1.45 0.952594 0.979333 1.32445 0.588C1.69567 0.196 2.14215 0 2.66389 0H17.8417C18.3634 0 18.8102 0.196 19.1821 0.588C19.5533 0.979333 19.7389 1.45 19.7389 2V14C19.7389 14.55 19.5533 15.021 19.1821 15.413C18.8102 15.8043 18.3634 16 17.8417 16H2.66389ZM10.2528 9L2.66389 4V14H17.8417V4L10.2528 9ZM10.2528 7L17.8417 2H2.66389L10.2528 7ZM2.66389 4V2V14V4Z" fill="#CCCCC6"/></svg></span>
+                 
                   {/* ---------------------emial--------------------- */}
-                  <input onChange={(event)=>{setemail(event.target.value)}} type="email" placeholder='Enter your email id' className=' text-[#4C4C4A] w-full text-[16px] outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]' required/>
+                  <input onChange={(event)=>{emailhandler(event)}} type="email" placeholder='Enter your email id' className=' text-[#4C4C4A] w-full text-[16px] outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]' required/>
                 
                 </div>
+                {emailErr?<h1 className='text-red-500'>!invalid Email (must be grater then 4 charcter and include "@" "." at right place)</h1>:""}
               </div>
               <div>
                 <label htmlFor="name" className='text-[18px] leading-[21.5px] font-medium text-[#7F7F7C] ml-[6px]'>Password</label>
@@ -64,9 +100,10 @@ function userdata(){
                  
                  
                   {/* ----------------------password-------------------------------- */}
-                  <input onChange={(event)=>{setpassword(event.target.value)}} type="password" placeholder='Password' className='text-[16px]  w-full text-[#4C4C4A]  outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]'  required/>
+                  <input onChange={(event)=>{passwordhandler(event)}} type="password" placeholder='Password' className='text-[16px]  w-full text-[#4C4C4A]  outline-none leading-[19.36px] ml-[17.16px] placeholder:text-[#B2B2AE]'  required/>
                 
                 </div>
+                {passwordErr?<h1 className='text-red-500'>!invalid password (must be grater then 8 letter)</h1>:""}
               </div>
 
               {/* Terms & Conditions */}
@@ -85,6 +122,7 @@ function userdata(){
 
                {/*Login with otp*/}
               <div className="mt-[42px]">
+                {/* ------------------------------login otp button------------------------------------ */}
                 <button className='bg-white-400 shadow-lg shadow-primary-400/50 text-[#F3733D] text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font border-solid border-2 border-[#F3733D]'><NavLink to="/LoginWithOtp">Login with OTP</NavLink></button>
               </div>
               {/* Or Divider */}

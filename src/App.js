@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import SingUp from './screen/Auth/Login/Login';
+// import SingUp from './screen/Auth/Login/Login';
 import MainRoutes from './routes/MainRoutes';
 
 function App() {
