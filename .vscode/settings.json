@@ -16,5 +16,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   //
-  "cSpell.words": ["framehatke", "noopener", "noreferrer", "Parens", "reactjs", "TTFB"]
+  "cSpell.words": ["framehatke", "noopener", "noreferrer", "Parens", "reactjs", "tailwindcss", "TTFB"]
 }
