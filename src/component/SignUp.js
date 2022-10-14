@@ -40,7 +40,7 @@ function SignUp() {
       {/* ----------------- left sidebar  section end-------------------------------*/}
       <div className="col-span-7 flex justify-center items-center pt-[10%] ">
         {/* --------------------------------right sidebar------------------------ */}
-        <div className="w-[80%]">
+        <div className="w-[55%]">
           <div>
             <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
               Sing <span className="text-[#F3733D]">Up</span>
@@ -59,7 +59,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const item = event.target.value;
                     setsName(item);
@@ -90,7 +90,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Enter your Email ID"
-                  className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                     setsEmail(event.target.value);
@@ -117,12 +117,12 @@ function SignUp() {
             {/* enter password */}
             <div className="flex flex-col justify-start items-start mt-[30px]">
               <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Password</label>
-              <div className="mt-[12px] relative w-[100%]">
+              <div className="mt-[12px] relative w-[100%] max-w-[623px]">
                 <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px]" />
                 <img
                   src="../../images/visibility.svg"
                   alt="i"
-                  className=" absolute ml-[85%] mt-[16px] "
+                  className=" absolute ml-[90%] mt-[16px] "
                   onClick={() => {
                     if (passVisible == 'password') {
                       setPassVisible('text');
@@ -176,12 +176,12 @@ function SignUp() {
               onClick={() => {
                 userData();
               }}
-              className=" hover:bg-orange-600 text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] shadow-md mt-[42px]"
+              className="max-w-[623px] hover:bg-orange-600 text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] shadow-md mt-[42px]"
             >
               Create Account
             </button>
             {/* or divider */}
-            <div className="flex justify-start items-center mt-[50px]">
+            <div className="flex justify-start items-center mt-[50px] w-[100%] max-w-[623px]">
               <hr className="w-[50%]" />
               <div className="text-[#B2B2AE]">Or</div>
               <hr className="w-[50%]" />

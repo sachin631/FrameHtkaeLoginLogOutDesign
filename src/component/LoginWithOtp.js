@@ -42,12 +42,12 @@ function LoginWithOtp() {
         {/* ----------------- left sidebar  section end-------------------------------*/}
         <div className="col-span-7 flex justify-center items-center pt-[10%] ">
           {/* --------------------------------right sidebar------------------------ */}
-          <div className="w-[67%]">
+          <div className="w-[55%]">
             <div>
               <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
                 Log <span className="text-[#F3733D]">In</span>
               </h1>
-              <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] w-[100%] text-[22px]">
+              <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] max-w-[623px] w-[100%] text-[22px]">
                 Don`t have an account?{' '}
                 <span className="text-[#F3733D] cursor-pointer">
                   <NavLink to="/">Sign Up</NavLink>
@@ -62,7 +62,7 @@ function LoginWithOtp() {
                   <input
                     type="text"
                     placeholder="Enter your Email ID"
-                    className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                       setsEmail(event.target.value);
@@ -90,7 +90,7 @@ function LoginWithOtp() {
               {toggle === true ? (
                 <section className="mt-[30px]">
                   <h1 className="font-[Inter]  font-[500] font-[18px] leading-[21.78px] text-[#7F7F7C]">OTP</h1>
-                  <form className="flex justify-center items-center mt-[12px] gap-[28px] ">
+                  <form className="flex justify-center items-center mt-[12px] gap-[28px] max-w-[623px]">
                     <input
                       type="text"
                       maxLength={1}
@@ -184,7 +184,7 @@ function LoginWithOtp() {
                     onClick={() => {
                       setToggle(true);
                     }}
-                    className="bg-primary-400 shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
+                    className="max-w-[623px] bg-primary-400 shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
                   >
                     {' '}
                     Request OTP
@@ -197,12 +197,12 @@ function LoginWithOtp() {
 
               {/* ---------------------------------------------------add confirm continue to Reset start------------------------------------------------------ */}
               {toggle === true ? (
-                <section className="flex justify-center items-center">
+                <section className="flex justify-start items-center">
                   <button
                     onClick={event => {
                       apiHandler(event);
                     }}
-                    className="hover:bg-[#FA5916] text-[18px] font-[inter] shadow-primary-400/50 leading-[22px] font-[18px] font-[400] text-[#FFFFFF] shadow-md bg-[#F3733D] text-center w-[523px] py-[13px] rounded-[63px]"
+                    className="hover:bg-[#FA5916] text-[18px] font-[inter] shadow-primary-400/50 leading-[22px] font-[18px] font-[400] text-[#FFFFFF] shadow-md bg-[#F3733D] text-center w-[100%] max-w-[623px] py-[13px] rounded-[63px]"
                   >
                     Continue to Reset
                   </button>
@@ -215,12 +215,12 @@ function LoginWithOtp() {
 
               {/*----------------- ------------------------------------sachin toggle otp button request end here------------------------------------------------- */}
               <NavLink to="/Login">
-                <button className="text-[#F3733D] shadow-lg shadow-[#7F7F7C] text-center leading-[22px] text-[18px] font-[400] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
+                <button className="text-[#F3733D] max-w-[623px] shadow-lg shadow-[#7F7F7C] text-center leading-[22px] text-[18px] font-[400] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
                   Login With Password
                 </button>
               </NavLink>
               {/* or divider */}
-              <div className="flex justify-start items-center mt-[50px]">
+              <div className="flex justify-start items-center mt-[50px] max-w-[623px]">
                 <hr className="w-[50%]" />
                 <div className="text-[#B2B2AE]">Or</div>
                 <hr className="w-[50%]" />

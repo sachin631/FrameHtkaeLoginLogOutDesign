@@ -37,7 +37,7 @@ function Login() {
         {/* ----------------- left sidebar  section end-------------------------------*/}
         <div className="col-span-7 flex justify-center items-center pt-[10%] ">
           {/* --------------------------------right sidebar------------------------ */}
-          <div className="w-[67%]">
+          <div className="w-[55%]">
             <div>
               <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
                 Log <span className="text-[#F3733D]">In</span>
@@ -57,7 +57,7 @@ function Login() {
                   <input
                     type="text"
                     placeholder="Enter your Email ID"
-                    className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                       setsEmail(event.target.value);
@@ -84,12 +84,12 @@ function Login() {
               {/* enter password */}
               <div className="flex flex-col justify-start items-start mt-[30px]">
                 <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Password</label>
-                <div className="mt-[12px] relative w-[100%]">
+                <div className="mt-[12px] relative w-[100%] max-w-[623px]">
                   <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px]" />
                   <img
                     src="../../images/visibility.svg"
                     alt="i"
-                    className=" absolute ml-[85%]  mt-[16px] "
+                    className=" absolute ml-[90%]  mt-[16px] "
                     onClick={() => {
                       if (passVisible == 'password') {
                         setPassVisible('text');
@@ -104,7 +104,7 @@ function Login() {
                   <input
                     type={passVisible}
                     placeholder="Password"
-                    className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className="cursor-pointer max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const item = event.target.value;
                       setsPassword(item);
@@ -126,7 +126,7 @@ function Login() {
                 ''
               )}
               {/* check box */}
-              <div className="flex flex-col justify-start items-start mt-[30px] w-[100%]">
+              <div className="flex flex-col justify-start items-start mt-[30px] w-[100%] max-w-[623px]">
                 <div className="mt-[8px] flex justify-between w-[100%]">
                   <div className="flex justify-start items-center">
                     <input
@@ -141,17 +141,20 @@ function Login() {
                 </div>
               </div>
               {/* create account button */}
-              <button onClick={apiHandler} className="text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] hover:bg-orange-600 shadow-md mt-[42px] shadow-[#7F7F7C] ">
+              <button
+                onClick={apiHandler}
+                className="text-[#FFFFFF] max-w-[623px] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] hover:bg-orange-600 shadow-md mt-[42px] shadow-[#7F7F7C] "
+              >
                 Login
               </button>
               <NavLink to="/LoginWithOtp">
-                <button className="text-[#F3733D] shadow-lg shadow-[#7F7F7C] text-center leading-[22px] text-[18px] font-[400] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
+                <button className="text-[#F3733D] shadow-lg shadow-[#7F7F7C] text-center leading-[22px] text-[18px] font-[400] max-w-[623px] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
                   Login With OTP
                 </button>
               </NavLink>
               {/* or divider */}
-              <div className="flex justify-start items-center mt-[50px]">
-                <hr className="w-[50%]" />
+              <div className="flex justify-start items-center mt-[50px] max-w-[623px]">
+                <hr className="w-[50%] " />
                 <div className="text-[#B2B2AE]">Or</div>
                 <hr className="w-[50%]" />
               </div>
