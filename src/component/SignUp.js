@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function SignUp() {
+  const [ErrName, setErrName] = useState(false);
+  const [ErrEmail, setErrEmail] = useState(false);
+  const [ErrPassword, setErrPassword] = useState(false);
   const [passVisible, setPassVisible] = useState('password');
   const [sName, setsName] = useState('');
   const [sEmail, setsEmail] = useState('');
   const [sPassword, setsPassword] = useState('');
   console.log({ sName, sEmail, sPassword });
+
   // api post data of email and password
   function userData() {
     fetch('http://ec2-52-66-165-70.ap-south-1.compute.amazonaws.com:3000/user/register', {
@@ -34,59 +38,91 @@ function SignUp() {
       </div>
 
       {/* ----------------- left sidebar  section end-------------------------------*/}
-      <div className="col-span-7 flex justify-center items-center mt-[10%] ">
+      <div className="col-span-7 flex justify-center items-center pt-[10%] ">
         {/* --------------------------------right sidebar------------------------ */}
         <div className="w-[80%]">
           <div>
             <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
               Sing <span className="text-[#F3733D]">Up</span>
             </h1>
-            <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] w-[296px] text-[22px]">
+            <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] w-[100%] text-[22px]">
               Already have an account?{' '}
               <span className="text-[#F3733D] cursor-pointer">
                 <NavLink to="/login">Log In</NavLink>
               </span>
             </div>
             {/* enter your name */}
-            <div className="flex flex-col justify-start items-start mt-[60px]">
+            <div className="flex flex-col justify-start items-start mt-[60px] ">
               <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Name</label>
-              <div className="mt-[12px] relative">
+              <div className="mt-[12px] relative w-[100%]">
                 <img src="../../images/person_filled.svg" alt="i" className=" absolute mt-[16px] ml-[16px] " />
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className=" w-[523px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
-                    setsName(event.target.value);
+                    const item = event.target.value;
+                    setsName(item);
+                    if (item.length < 3) {
+                      setErrName(true);
+                    } else {
+                      setErrName(false);
+                    }
                   }}
                 />
               </div>
             </div>
+            {/* wrong name toggle */}
+            {ErrName === true ? (
+              <div className="flex justify-start items-center mt-[14px] gap-2">
+                <img src="../../images/error.svg" alt="simg" />
+                <p className="text-[#FF2E00] leading-[19px] text-16px font-[400] font-[Inter]">Wrong Name</p>
+              </div>
+            ) : (
+              ''
+            )}
             {/* enter your email or mobile */}
             <div className="flex flex-col justify-start items-start mt-[30px]">
               <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Email or Mobile</label>
-              <div className="mt-[12px] relative">
+              <div className="mt-[12px] relative w-[100%]">
                 <img src="../../images/mail.svg" alt="i" className=" absolute mt-[16px] ml-[16px] " />
 
                 <input
                   type="text"
                   placeholder="Enter your Email ID"
-                  className=" w-[523px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className=" w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
+                    const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                     setsEmail(event.target.value);
+
+                    // const phoneregexp = /^w{2,}@w{2,}.w{2,4}$/;
+
+                    if (mailRegExp.test(sEmail) === false) {
+                      setErrEmail(true);
+                    } else {
+                      setErrEmail(false);
+                    }
                   }}
                 />
               </div>
             </div>
+            {ErrEmail === true ? (
+              <div className="flex justify-start items-center mt-[14px] gap-2">
+                <img src="../../images/error.svg" alt="simg" />
+                <p className="text-[#FF2E00] leading-[19px] text-16px font-[400] font-[Inter]">Wrong Email</p>
+              </div>
+            ) : (
+              ''
+            )}
             {/* enter password */}
             <div className="flex flex-col justify-start items-start mt-[30px]">
               <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Password</label>
-              <div className="mt-[12px] relative">
+              <div className="mt-[12px] relative w-[100%]">
                 <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px]" />
                 <img
                   src="../../images/visibility.svg"
                   alt="i"
-                  className=" absolute ml-[90%] mt-[16px] "
+                  className=" absolute ml-[85%] mt-[16px] "
                   onClick={() => {
                     if (passVisible == 'password') {
                       setPassVisible('text');
@@ -101,13 +137,27 @@ function SignUp() {
                 <input
                   type={passVisible}
                   placeholder="Password"
-                  className="cursor-pointer w-[523px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
-                    setsPassword(event.target.value);
+                    const item = event.target.value;
+                    setsPassword(item);
+                    if (item.length < 8) {
+                      setErrPassword(true);
+                    } else {
+                      setErrPassword(false);
+                    }
                   }}
                 />
               </div>
             </div>
+            {ErrPassword === true ? (
+              <div className="flex justify-start items-center mt-[14px] gap-2">
+                <img src="../../images/error.svg" alt="simg" />
+                <p className="text-[#FF2E00] leading-[19px] text-16px font-[400] font-[Inter]">Wrong Password</p>
+              </div>
+            ) : (
+              ''
+            )}
 
             {/* check box */}
             <div className="flex flex-col justify-start items-start mt-[30px]">
@@ -126,13 +176,19 @@ function SignUp() {
               onClick={() => {
                 userData();
               }}
-              className=" hover:bg-orange-600 text-[#FFFFFF] w-[523px] h-[48px] rounded-[63px] bg-[#F3733D] shadow-md mt-[42px]"
+              className=" hover:bg-orange-600 text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] shadow-md mt-[42px]"
             >
               Create Account
             </button>
+            {/* or divider */}
+            <div className="flex justify-start items-center mt-[50px]">
+              <hr className="w-[50%]" />
+              <div className="text-[#B2B2AE]">Or</div>
+              <hr className="w-[50%]" />
+            </div>
 
             {/* Sign Up with  */}
-            <div className="flex justify-start items-center space-x-[18px] mt-[113px]">
+            <div className="flex justify-start items-center space-x-[18px] mt-[39px]">
               <button className="flex items-center sign-up-form-input-shadow p-[10px] rounded-full">
                 <img src="/images/Google.svg" className="mr-[10px]" />
                 <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
