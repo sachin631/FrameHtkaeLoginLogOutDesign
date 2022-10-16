@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import SwitchButton from '../Resuable/Switchbutton';
 
 function SignUp() {
   const [ErrName, setErrName] = useState(false);
@@ -40,7 +41,7 @@ function SignUp() {
       {/* ----------------- left sidebar  section end-------------------------------*/}
       <div className="col-span-7 flex justify-center items-center pt-[10%] ">
         {/* --------------------------------right sidebar------------------------ */}
-        <div className="w-[55%]">
+        <div className="min-w-[223px] w-[55%] max-w-[623px]">
           <div>
             <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
               Sing <span className="text-[#F3733D]">Up</span>
@@ -59,7 +60,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const item = event.target.value;
                     setsName(item);
@@ -90,7 +91,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Enter your Email ID"
-                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                     setsEmail(event.target.value);
@@ -118,11 +119,11 @@ function SignUp() {
             <div className="flex flex-col justify-start items-start mt-[30px]">
               <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Password</label>
               <div className="mt-[12px] relative w-[100%] max-w-[623px]">
-                <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px]" />
+                <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px] border-[#CCCCC6]" />
                 <img
                   src="../../images/visibility.svg"
                   alt="i"
-                  className=" absolute ml-[90%] mt-[16px] "
+                  className=" absolute ml-[90%] mt-[16px] border-[#CCCCC6]"
                   onClick={() => {
                     if (passVisible == 'password') {
                       setPassVisible('text');
@@ -137,7 +138,7 @@ function SignUp() {
                 <input
                   type={passVisible}
                   placeholder="Password"
-                  className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const item = event.target.value;
                     setsPassword(item);
@@ -161,11 +162,12 @@ function SignUp() {
 
             {/* check box */}
             <div className="flex flex-col justify-start items-start mt-[30px]">
-              <div className="mt-[8px] ">
-                <input
+              <div className="mt-[8px] flex gap-[9px]">
+                <SwitchButton />
+                {/* <input
                   type="checkbox"
                   className="cursor-pointer pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg  outline-none bg-[#FFFFFF] border-[1px]  border-solid border-[#F2F2EC] "
-                />
+                /> */}
                 <label className="ml-[6px] text-[#B2B2AE] leading-[19px] text-[16px] font-[16px] font-[400]">
                   I agree to <span className="text-[#F3733D]">Platform Term</span> and services and <span className="text-[#F3733D]">privacy policy</span>
                 </label>
@@ -176,7 +178,7 @@ function SignUp() {
               onClick={() => {
                 userData();
               }}
-              className="max-w-[623px] hover:bg-orange-600 text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D] shadow-md mt-[42px]"
+              className="max-w-[623px] shadow-[#7F7F7C] shadow-md hover:bg-orange-600 text-[#FFFFFF] w-[100%] h-[48px] rounded-[63px] bg-[#F3733D]  mt-[42px]"
             >
               Create Account
             </button>
@@ -189,13 +191,13 @@ function SignUp() {
 
             {/* Sign Up with  */}
             <div className="flex justify-start items-center space-x-[18px] mt-[39px]">
-              <button className="flex items-center sign-up-form-input-shadow p-[10px] rounded-full">
+              <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
                 <img src="/images/Google.svg" className="mr-[10px]" />
                 <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
               </button>
-              <button className="flex items-center justify-center sign-up-form-input-shadow p-[10px] rounded-full">
+              <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
                 <img src="/images/vector.svg" className="mr-[10px]" />
-                <span className="text-[14px] mr-[13px] text-[#7F7F7C]">Sign up with Facebook</span>
+                <span className="text-[14px] mr-[13px] text-[#7F7F7C] ">Sign up with Facebook</span>
               </button>
             </div>
           </div>

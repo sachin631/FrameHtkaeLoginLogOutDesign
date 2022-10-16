@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import SwitchButton from '../Resuable/Switchbutton';
 
 function LoginWithOtp() {
   const [sEmail, setsEmail] = useState('');
@@ -42,7 +43,7 @@ function LoginWithOtp() {
         {/* ----------------- left sidebar  section end-------------------------------*/}
         <div className="col-span-7 flex justify-center items-center pt-[10%] ">
           {/* --------------------------------right sidebar------------------------ */}
-          <div className="w-[55%]">
+          <div className="min-w-[223px] w-[55%] max-w-[623px]">
             <div>
               <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
                 Log <span className="text-[#F3733D]">In</span>
@@ -62,7 +63,7 @@ function LoginWithOtp() {
                   <input
                     type="text"
                     placeholder="Enter your Email ID"
-                    className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-md shadow-[#7F7F7C] h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                       setsEmail(event.target.value);
@@ -98,7 +99,7 @@ function LoginWithOtp() {
                       onChange={event => {
                         setFirstOtp(event.target.value);
                       }}
-                      className="font-[Inter] text-[#4C4C4A] text-[16px] font-[400] font-[24px] leading-[29px] text-center outline-none w-[48px] h-[48px] bg-[#FFF6F2] border-solid rounded-[8px] border-[0.5px] border-[#F3733D] border-[0.5px solid #F3733D]"
+                      className="font-[Inter] shadow-[#7F7F7C] shadow-md text-[#4C4C4A] text-[16px] font-[400] font-[24px] leading-[29px] text-center outline-none w-[48px] h-[48px] bg-[#FFF6F2] border-solid rounded-[8px] border-[0.5px] border-[#F3733D] border-[0.5px solid #F3733D]"
                     ></input>
                     <input
                       type="text"
@@ -132,45 +133,16 @@ function LoginWithOtp() {
               ) : (
                 ''
               )}
-              {/* ...............................................sachin otp toggle bar end here.................................................... */}
-              {/* enter password */}
-              {/* <div className="flex flex-col justify-start items-start mt-[30px]">
-                <label className="text-[#7F7F7C] leading-[22px] font-[18px] font-[500] font-[Inter] text-[18px]">Password</label>
-                <div className="mt-[12px] relative w-[100%]">
-                  <img src="../../images/lock.svg" alt="i" className=" absolute mt-[16px] ml-[16px] w-[16px]  h-[21px]" />
-                  <img
-                    src="../../images/visibility.svg"
-                    alt="i"
-                    className=" absolute ml-[85%]  mt-[16px] "
-                    onClick={() => {
-                      if (passVisible == 'password') {
-                        setPassVisible('text');
-                      } else if (passVisible == 'text') {
-                        setPassVisible('password');
-                      }
-                      setTimeout(() => {
-                        setPassVisible('password');
-                      }, 4000);
-                    }}
-                  />
-                  <input
-                    type={passVisible}
-                    placeholder="Password"
-                    className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
-                    onChange={event => {
-                      setsPassword(event.target.value);
-                    }}
-                  />
-                </div>
-              </div> */}
+
               {/* check box */}
               <div className="flex flex-col justify-start items-start mt-[30px] w-[100%]">
                 <div className="mt-[8px] flex justify-between w-[100%]">
-                  <div className="flex justify-start items-center">
-                    <input
+                  <div className="flex justify-start gap-[9px] items-center">
+                    <SwitchButton />
+                    {/* <input
                       type="checkbox"
                       className="cursor-pointer pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg  outline-none bg-[#FFFFFF] border-[1px]  border-solid border-[#F2F2EC] "
-                    />
+                    /> */}
                     <label className="ml-[6px] text-[#B2B2AE] leading-[19px] text-[16px] font-[16px] font-[400] ">Remember me</label>
                   </div>
                   {/* <div className="text-[#B2B2AE]">Forget Password</div> */}
@@ -184,7 +156,7 @@ function LoginWithOtp() {
                     onClick={() => {
                       setToggle(true);
                     }}
-                    className="max-w-[623px] bg-primary-400 shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
+                    className="max-w-[623px] bg-primary-400 shadow-md shadow-[#7F7F7C]  text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
                   >
                     {' '}
                     Request OTP
@@ -215,7 +187,7 @@ function LoginWithOtp() {
 
               {/*----------------- ------------------------------------sachin toggle otp button request end here------------------------------------------------- */}
               <NavLink to="/Login">
-                <button className="text-[#F3733D] max-w-[623px] shadow-lg shadow-[#7F7F7C] text-center leading-[22px] text-[18px] font-[400] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
+                <button className="text-[#F3733D] shadow-md shadow-[#7F7F7C] max-w-[623px]  text-center leading-[22px] text-[18px] font-[400] w-[100%] h-[48px] rounded-[63px] bg-[#FFFFFF]   mt-[30px] border-[2px] border-solid border-[#F3733D]">
                   Login With Password
                 </button>
               </NavLink>
@@ -227,11 +199,11 @@ function LoginWithOtp() {
               </div>
               {/* Sign Up with  */}
               <div className="flex justify-start items-center space-x-[38px] mt-[30px]">
-                <button className="flex items-center sign-up-form-input-shadow p-[10px] rounded-full">
+                <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
                   <img src="/images/Google.svg" className="mr-[10px]" />
                   <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
                 </button>
-                <button className="flex items-center justify-center sign-up-form-input-shadow p-[10px] rounded-full">
+                <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
                   <img src="/images/vector.svg" className="mr-[10px]" />
                   <span className="text-[14px] mr-[13px] text-[#7F7F7C]">Sign up with Facebook</span>
                 </button>

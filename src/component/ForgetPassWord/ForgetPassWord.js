@@ -42,7 +42,7 @@ function ForgetPassWord() {
         {/* ----------------- left sidebar  section end-------------------------------*/}
         <div className="col-span-7 flex justify-center items-start pt-[10%] ">
           {/* --------------------------------right sidebar------------------------ */}
-          <div className="w-[55%]">
+          <div className="min-w-[223px] w-[55%] max-w-[623px] ">
             <div>
               <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
                 Password <span className="text-[#F3733D]">Reset</span>
@@ -57,7 +57,7 @@ function ForgetPassWord() {
                   <input
                     type="text"
                     placeholder="Enter your Email ID"
-                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                       setsEmail(event.target.value);
@@ -136,7 +136,7 @@ function ForgetPassWord() {
                     onClick={() => {
                       setToggle(true);
                     }}
-                    className="bg-primary-400 max-w-[623px] shadow-lg shadow-primary-400/50 text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
+                    className="bg-primary-400 max-w-[623px] shadow-md shadow-[#7F7F7C] text-white text-[18px] p-[13px] leading-[21.78px] rounded-full w-full font hover:bg-[#FA5916] bg-[#FA5916]"
                   >
                     {' '}
                     Request OTP
@@ -154,7 +154,7 @@ function ForgetPassWord() {
                       onClick={event => {
                         apiHandler(event);
                       }}
-                      className="hover:bg-[#FA5916] max-w-[623px] text-[18px] font-[inter] shadow-primary-400/50 leading-[22px] font-[18px] font-[400] text-[#FFFFFF] shadow-md bg-[#F3733D] text-center w-[100%] py-[13px] rounded-[63px]"
+                      className="hover:bg-[#FA5916] max-w-[623px] text-[18px] font-[inter] shadow-md shadow-[#7F7F7C] leading-[22px] font-[18px] font-[400] text-[#FFFFFF] bg-[#F3733D] text-center w-[100%] py-[13px] rounded-[63px]"
                     >
                       Continue to Reset
                     </button>

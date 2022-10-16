@@ -7480,6 +7480,13 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
 
+"react-js-switch@^1.1.6":
+  "integrity" "sha512-2FxJeXPIhnH+FCeWcN5s/BG1OeL8PVak6/tZ1F5F3snvraUPakVsUhLwJ40mM9juatHUDuERVOOELsjUBxre5w=="
+  "resolved" "https://registry.npmjs.org/react-js-switch/-/react-js-switch-1.1.6.tgz"
+  "version" "1.1.6"
+  dependencies:
+    "request-animation-number" "^1.0.6"
+
 "react-refresh@^0.11.0", "react-refresh@>=0.10.0 <1.0.0":
   "integrity" "sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.11.0.tgz"
@@ -7695,6 +7702,11 @@
     "htmlparser2" "^6.1.0"
     "lodash" "^4.17.21"
     "strip-ansi" "^6.0.1"
+
+"request-animation-number@^1.0.6":
+  "integrity" "sha512-t/9G8TrTzE5GBWXiQuOTeNEkiGqfv0JRac/6KMzNlTy0i01IgQxJ6G78b4cI+nHg38ZAeUScUT/gY6p6ww/SOw=="
+  "resolved" "https://registry.npmjs.org/request-animation-number/-/request-animation-number-1.0.8.tgz"
+  "version" "1.0.8"
 
 "require-directory@^2.1.1":
   "integrity" "sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q=="

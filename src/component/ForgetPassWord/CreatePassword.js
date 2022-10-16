@@ -17,7 +17,7 @@ function CreatePassWord() {
         {/* ----------------- left sidebar  section end-------------------------------*/}
         <div className="col-span-7 flex justify-center items-start pt-[10%] ">
           {/* --------------------------------right sidebar------------------------ */}
-          <div className="w-[55%]">
+          <div className="min-w-[223px] w-[55%] max-w-[623px]">
             <div>
               <h1 className="text-[#4C4C4A] leading-[59px] font-[48px] font-[700] text-[48px]">
                 Create <span className="text-[#F3733D]">Password </span>
@@ -35,7 +35,7 @@ function CreatePassWord() {
                     }}
                     type="password"
                     placeholder="password"
-                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   />
                 </div>
               </div>
@@ -56,7 +56,7 @@ function CreatePassWord() {
                     }}
                     type="password"
                     placeholder="password"
-                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-lg h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   />
                 </div>
               </div>
