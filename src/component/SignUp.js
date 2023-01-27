@@ -29,7 +29,7 @@ function SignUp() {
   }
 
   return (
-    <div className="grid grid-cols-12 font-[inter]">
+    <div className="grid md:grid-cols-12 grid-cols-1 font-[inter]">
       {/* ----------------- left sidebar  section start-------------------------------*/}
       <div className="col-span-5 bg-[#FFF6F2] h-[100%] ">
         <div className="flex flex-col justify-start items-start w-[100%] h-[100%] ">
@@ -48,7 +48,7 @@ function SignUp() {
             </h1>
             <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] w-[100%] text-[22px]">
               Already have an account?{' '}
-              <span className="text-[#F3733D] cursor-pointer">
+              <span className="text-[#F3733D] cursor-pointer animate-pulse">
                 <NavLink to="/login">Log In</NavLink>
               </span>
             </div>
@@ -60,7 +60,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] min-w-[256px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const item = event.target.value;
                     setsName(item);
@@ -91,7 +91,7 @@ function SignUp() {
                 <input
                   type="text"
                   placeholder="Enter your Email ID"
-                  className="max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="max-w-[623px] w-[100%] min-w-[256px]  pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                     setsEmail(event.target.value);
@@ -138,7 +138,7 @@ function SignUp() {
                 <input
                   type={passVisible}
                   placeholder="Password"
-                  className="cursor-pointer w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                  className="cursor-pointer w-[100%] min-w-[256px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                   onChange={event => {
                     const item = event.target.value;
                     setsPassword(item);
@@ -191,11 +191,11 @@ function SignUp() {
 
             {/* Sign Up with  */}
             <div className="flex justify-start items-center space-x-[18px] mt-[39px]">
-              <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
+              <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded">
                 <img src="/images/Google.svg" className="mr-[10px]" />
                 <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
               </button>
-              <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
+              <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px]  rounded">
                 <img src="/images/vector.svg" className="mr-[10px]" />
                 <span className="text-[14px] mr-[13px] text-[#7F7F7C] ">Sign up with Facebook</span>
               </button>

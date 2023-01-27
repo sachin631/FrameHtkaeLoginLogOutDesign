@@ -30,7 +30,7 @@ function LoginWithOtp() {
   };
   return (
     <>
-      <div className="grid grid-cols-12 font-[inter]">
+      <div className="grid md:grid-cols-12 grid-cols-1 font-[inter]">
         {/* ----------------- left sidebar  section start-------------------------------*/}
         <div className="col-span-5 bg-[#FFF6F2] h-[100%] ">
           <div className="flex flex-col justify-start items-start w-[100%] h-[100%] ">
@@ -199,11 +199,11 @@ function LoginWithOtp() {
               </div>
               {/* Sign Up with  */}
               <div className="flex justify-start items-center space-x-[38px] mt-[30px]">
-                <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
+                <button className="flex items-center shadow-[#7F7F7C] shadow-sm p-[1px] rounded">
                   <img src="/images/Google.svg" className="mr-[10px]" />
                   <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
                 </button>
-                <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded-full">
+                <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm p-[10px] rounded">
                   <img src="/images/vector.svg" className="mr-[10px]" />
                   <span className="text-[14px] mr-[13px] text-[#7F7F7C]">Sign up with Facebook</span>
                 </button>

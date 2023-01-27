@@ -25,7 +25,7 @@ function Login() {
   };
   return (
     <>
-      <div className="grid grid-cols-12 font-[inter]">
+      <div className="grid md:grid-cols-12 grid-cols-1 font-[inter]">
         {/* ----------------- left sidebar  section start-------------------------------*/}
         <div className="col-span-5 bg-[#FFF6F2] h-[100%] ">
           <div className="flex flex-col justify-start items-start w-[100%] h-[100%] ">
@@ -45,7 +45,7 @@ function Login() {
               </h1>
               <div className="text-[#7F7F7C] leading-[22px] font-[18px] font-[400] w-[100%] text-[22px]">
                 Don`t have an account?{' '}
-                <span className="text-[#F3733D] cursor-pointer">
+                <span className="text-[#F3733D] cursor-pointer animate-pulse">
                   <NavLink to="/">Sign Up</NavLink>
                 </span>
               </div>
@@ -58,7 +58,7 @@ function Login() {
                   <input
                     type="text"
                     placeholder="Enter your Email ID"
-                    className=" w-[100%] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className=" w-[100%] min-w-[256px] max-w-[623px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const mailRegExp = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
                       setsEmail(event.target.value);
@@ -97,15 +97,15 @@ function Login() {
                       } else if (passVisible == 'text') {
                         setPassVisible('password');
                       }
-                      setTimeout(() => {
-                        setPassVisible('password');
-                      }, 4000);
+                      // setTimeout(() => {
+                      //   setPassVisible('password');
+                      // }, 40000);
                     }}
                   />
                   <input
                     type={passVisible}
                     placeholder="Password"
-                    className="cursor-pointer max-w-[623px] w-[100%] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
+                    className="cursor-pointer max-w-[623px] w-[100%] min-w-[256px] pl-[48px] text-[19px] font-[Inter] text-[#4C4C4A] shadow-[#7F7F7C] shadow-md h-[48px] outline-none bg-[#FFFFFF] border-[1px] rounded-[63px] border-solid border-[#F2F2EC] "
                     onChange={event => {
                       const item = event.target.value;
                       setsPassword(item);
@@ -162,11 +162,11 @@ function Login() {
               </div>
               {/* Sign Up with  */}
               <div className="flex justify-start items-center space-x-[38px] mt-[30px]">
-                <button className="flex items-center sign-up-form-input-shadow p-[10px] rounded-full shadow-[#7F7F7C] shadow-sm">
+                <button className="flex items-center sign-up-form-input-shadow p-[10px] rounded shadow-[#7F7F7C] shadow-sm">
                   <img src="/images/Google.svg" className="mr-[10px]" />
                   <span className="mr-[13px] text-[14px] text-[#7F7F7C]">Sign up with Google</span>
                 </button>
-                <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm text-center p-[10px] rounded-full">
+                <button className="flex items-center justify-center shadow-[#7F7F7C] shadow-sm text-center p-[10px] ">
                   <img src="/images/vector.svg" className="mr-[10px]" />
                   <span className="text-[14px] mr-[13px] text-[#7F7F7C] ">Sign up with Facebook</span>
                 </button>
